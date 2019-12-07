@@ -1348,6 +1348,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Funky Drawers Set[1]
       objectReference: {fileID: 0}
+    - target: {fileID: 3239273863981769791, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3970142303492473630, guid: a96062abbb8a20d45b2309875cd6582a,
         type: 3}
       propertyPath: m_Layer
@@ -1357,6 +1362,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: -7217828390678641911, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: -4898841953366944908, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: a96062abbb8a20d45b2309875cd6582a,
         type: 3}
@@ -1433,6 +1448,36 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: -1507834222289192923, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.08
+      objectReference: {fileID: 0}
+    - target: {fileID: -1303533798577211092, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 290114139337320885, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1598952738356583958, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321249083693211670, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4553290073538286241, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 7231854936144584292, guid: a96062abbb8a20d45b2309875cd6582a,
         type: 3}
       propertyPath: m_Layer
@@ -1442,6 +1487,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9179517344801119225, guid: a96062abbb8a20d45b2309875cd6582a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96062abbb8a20d45b2309875cd6582a, type: 3}
@@ -2626,7 +2676,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498558745}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalPosition: {x: 0, y: 0.5, z: -0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2913,8 +2963,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839045469}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.58, y: 4.64, z: 11.91}
-  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.50000024}
+  m_LocalPosition: {x: -1.58, y: 4.64, z: 1.46}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 2105779657}
   m_RootOrder: 0
@@ -3323,8 +3373,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045094066}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.9, y: 4.64, z: 11.91}
-  m_LocalScale: {x: 0.5, y: 0.50000024, z: 0.50000024}
+  m_LocalPosition: {x: 3.9, y: 4.64, z: 1.46}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1707146860}
   m_RootOrder: 0
