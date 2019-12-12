@@ -120,7 +120,7 @@ public class OvrAvatarRenderComponent : MonoBehaviour {
         firstSkinnedUpdate = false;
     }
 
-    protected Material CreateAvatarMaterial(string name, Shader shader)
+    protected Material CreateAvatarMaterial(string name, ShaderUpdater shader)
     {
         if (shader == null)
         {

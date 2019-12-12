@@ -7,11 +7,11 @@ public class OvrAvatarSkinnedMeshRenderPBSComponent : OvrAvatarRenderComponent {
 
     bool isMaterialInitilized = false;
 
-    internal void Initialize(ovrAvatarRenderPart_SkinnedMeshRenderPBS skinnedMeshRenderPBS, Shader shader, int thirdPersonLayer, int firstPersonLayer)
+    internal void Initialize(ovrAvatarRenderPart_SkinnedMeshRenderPBS skinnedMeshRenderPBS, ShaderUpdater shader, int thirdPersonLayer, int firstPersonLayer)
     {
         if (shader == null)
         {
-            shader = Shader.Find("OvrAvatar/AvatarSurfaceShaderPBS");
+            shader = ShaderUpdater.Find("OvrAvatar/AvatarSurfaceShaderPBS");
         }
         mesh = CreateSkinnedMesh(skinnedMeshRenderPBS.meshAssetID, skinnedMeshRenderPBS.visibilityMask, thirdPersonLayer, firstPersonLayer);
         mesh.sharedMaterial = CreateAvatarMaterial(gameObject.name + "_material", shader);

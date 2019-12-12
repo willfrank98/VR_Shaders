@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shader : MonoBehaviour
+public class ShaderUpdater : MonoBehaviour
 {
 	public GameObject[] gameObjects;
 	public Material[] materials;

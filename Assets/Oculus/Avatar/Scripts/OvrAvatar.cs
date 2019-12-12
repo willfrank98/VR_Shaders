@@ -92,18 +92,18 @@ public class OvrAvatar : MonoBehaviour
     public bool UseTransparentRenderQueue = true;
 
     [Header("Shaders")]
-    public Shader Monochrome_SurfaceShader;
-    public Shader Monochrome_SurfaceShader_SelfOccluding;
-    public Shader Monochrome_SurfaceShader_PBS;
-    public Shader Skinshaded_SurfaceShader_SingleComponent;
-    public Shader Skinshaded_VertFrag_SingleComponent;
-    public Shader Skinshaded_VertFrag_CombinedMesh;
-    public Shader Skinshaded_Expressive_SurfaceShader_SingleComponent;
-    public Shader Skinshaded_Expressive_VertFrag_SingleComponent;
-    public Shader Skinshaded_Expressive_VertFrag_CombinedMesh;
-    public Shader Loader_VertFrag_CombinedMesh;
-    public Shader EyeLens;
-    public Shader ControllerShader;
+    public ShaderUpdater Monochrome_SurfaceShader;
+    public ShaderUpdater Monochrome_SurfaceShader_SelfOccluding;
+    public ShaderUpdater Monochrome_SurfaceShader_PBS;
+    public ShaderUpdater Skinshaded_SurfaceShader_SingleComponent;
+    public ShaderUpdater Skinshaded_VertFrag_SingleComponent;
+    public ShaderUpdater Skinshaded_VertFrag_CombinedMesh;
+    public ShaderUpdater Skinshaded_Expressive_SurfaceShader_SingleComponent;
+    public ShaderUpdater Skinshaded_Expressive_VertFrag_SingleComponent;
+    public ShaderUpdater Skinshaded_Expressive_VertFrag_CombinedMesh;
+    public ShaderUpdater Loader_VertFrag_CombinedMesh;
+    public ShaderUpdater EyeLens;
+    public ShaderUpdater ControllerShader;
 
     [Header("Other")]
     public bool CanOwnMicrophone = true;
