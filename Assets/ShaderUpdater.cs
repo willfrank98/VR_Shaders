@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Shader : MonoBehaviour
+public class ShaderUpdater : MonoBehaviour
 {
 	public GameObject[] gameObjects;
 	public Material[] materials;
@@ -12,7 +12,7 @@ public class Shader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
 	// Update is called once per frame
