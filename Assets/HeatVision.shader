@@ -1,53 +1,51 @@
 ﻿Shader "Custom/HeatVision"
 {
-    Properties
-    {
-        _Color ("Color", Color) = (1,1,1,1)
-        _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _Glossiness ("Smoothness", Range(0,1)) = 0.5
-        _Metallic ("Metallic", Range(0,1)) = 0.0
-    }
-    SubShader
-    {
-        Tags { "RenderType"="Opaque" }
-        LOD 200
+	Properties
+	{
+		// _Color ("Color", Color) = (1,1,1,1)
+		// _MainTex ("Albedo (RGB)", 2D) = "white" {}
+		// _Glossiness ("Smoothness", Range(0,1)) = 0.5
+		// _Metallic ("Metallic", Range(0,1)) = 0.0
+		_ObjectCenter("ObjectCenter", Vector) = (0, 0, 0)
+		_HeatAmount("HeatAmount", Range(1,10)) = 0.5
+	}
 
-        CGPROGRAM
-        // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows
+		SubShader
+	{
+		Tags { "RenderType" = "Opaque" }
+		CGPROGRAM
+		#pragma surface surf Lambert
 
-        // Use shader model 3.0 target, to get nicer looking lighting
-        #pragma target 3.0
+		float4 _ObjectCenter;
+		float _HeatAmount;
+		float distance;
 
-        sampler2D _MainTex;
+		struct Input {
+			float4 color : COLOR;
+			float3 worldPos;
+		};
+		void surf(Input IN, inout SurfaceOutput o) {
+			//distance = sqrt(pow(IN.worldPos.x - _ObjectCenter[0], 2) + pow(IN.worldPos.y - _ObjectCenter[1], 2) + pow(IN.worldPos.z - _ObjectCenter[2], 2)) / (1 / _HeatAmount);
+			distance = sqrt(pow(IN.worldPos.x - _ObjectCenter[0], 2) + pow(IN.worldPos.y - _ObjectCenter[1], 2) + pow(IN.worldPos.z - _ObjectCenter[2], 2));
+			//distance = _HeatAmount / distance;
 
-        struct Input
-        {
-            float2 uv_MainTex;
-        };
+			float4 newColor = { 0, 0, 0, 0 };
+			if (distance < 1 / _HeatAmount) {
+				newColor[0] = 1;
+			}
+			else if (distance < 2 / _HeatAmount) {
+				newColor[1] = 1;
+			}
+			else if (distance < 3 / _HeatAmount) {
+				newColor[2] = 1;
+			}
+			/*else {
+				newColor = { 0, 0, 1, 1 };
+			}*/
+			o.Albedo = newColor;
+		}
+		ENDCG
+	}
 
-        half _Glossiness;
-        half _Metallic;
-        fixed4 _Color;
-
-        // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
-        // See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
-        // #pragma instancing_options assumeuniformscaling
-        UNITY_INSTANCING_BUFFER_START(Props)
-            // put more per-instance properties here
-        UNITY_INSTANCING_BUFFER_END(Props)
-
-        void surf (Input IN, inout SurfaceOutputStandard o)
-        {
-            // Albedo comes from a texture tinted by color
-            fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
-            o.Albedo = c.rgb;
-            // Metallic and smoothness come from slider variables
-            o.Metallic = _Metallic;
-            o.Smoothness = _Glossiness;
-            o.Alpha = c.a;
-        }
-        ENDCG
-    }
-    FallBack "Diffuse"
+	FallBack "Diffuse"
 }

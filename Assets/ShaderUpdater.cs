@@ -13,7 +13,7 @@ public class ShaderUpdater : MonoBehaviour
     void Start()
     {
 
-    }
+	}
 
 	// Update is called once per frame
 	void Update()
@@ -31,5 +31,6 @@ public class ShaderUpdater : MonoBehaviour
 		//		obj.GetComponent<Renderer>().material = materials[matIndex];
 		//	}
 		//}
+
 	}
 }
