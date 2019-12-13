@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HeatVis : MonoBehaviour
 {
+    public Transform center;
     Renderer render;
 
     // Start is called before the first frame update
@@ -12,8 +13,7 @@ public class HeatVis : MonoBehaviour
         render = GetComponent<Renderer>();
 
         // sets center of object
-        var center = render.bounds.center;
-        render.material.SetVector("_ObjectCenter", center);
+        render.material.SetVector("_ObjectCenter", center.position);
     }
 
     // Update is called once per frame
