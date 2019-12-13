@@ -66,7 +66,7 @@ public class OvrAvatarMaterialManager : MonoBehaviour
     public List<ReflectionProbeBlendInfo> ReflectionProbes = new List<ReflectionProbeBlendInfo>();
 
     // Cache the previous shader when swapping in the loading shader.
-    private ShaderUpdater CombinedShader;
+    private Shader CombinedShader;
     // Shader properties
     public static string AVATAR_SHADER_LOADER = "OvrAvatar/Avatar_Mobile_Loader";
     public static string AVATAR_SHADER_MAINTEX = "_MainTex";
@@ -385,7 +385,7 @@ public class OvrAvatarMaterialManager : MonoBehaviour
         bool transparentQueue = TargetRenderer.sharedMaterial.IsKeywordEnabled("_ALPHATEST_ON");
 
         // Swap in loading shader
-        TargetRenderer.sharedMaterial.shader = ShaderUpdater.Find(AVATAR_SHADER_LOADER);
+        TargetRenderer.sharedMaterial.shader = Shader.Find(AVATAR_SHADER_LOADER);
         TargetRenderer.sharedMaterial.SetColor(AVATAR_SHADER_COLOR, Color.white);
 
         while (OvrAvatarSDKManager.Instance.GetTextureCopyManager().GetTextureCount() > 0)

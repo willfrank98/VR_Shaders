@@ -5,14 +5,14 @@ using Oculus.Avatar;
 
 public class OvrAvatarSkinnedMeshRenderComponent : OvrAvatarRenderComponent
 {
-    ShaderUpdater surface;
-    ShaderUpdater surfaceSelfOccluding;
+    Shader surface;
+    Shader surfaceSelfOccluding;
     bool previouslyActive = false;
         
-    internal void Initialize(ovrAvatarRenderPart_SkinnedMeshRender skinnedMeshRender, ShaderUpdater surface, ShaderUpdater surfaceSelfOccluding, int thirdPersonLayer, int firstPersonLayer)
+    internal void Initialize(ovrAvatarRenderPart_SkinnedMeshRender skinnedMeshRender, Shader surface, Shader surfaceSelfOccluding, int thirdPersonLayer, int firstPersonLayer)
     {
-        this.surfaceSelfOccluding = surfaceSelfOccluding != null ? surfaceSelfOccluding :  ShaderUpdater.Find("OvrAvatar/AvatarSurfaceShaderSelfOccluding");
-        this.surface = surface != null ? surface : ShaderUpdater.Find("OvrAvatar/AvatarSurfaceShader");
+        this.surfaceSelfOccluding = surfaceSelfOccluding != null ? surfaceSelfOccluding :  Shader.Find("OvrAvatar/AvatarSurfaceShaderSelfOccluding");
+        this.surface = surface != null ? surface : Shader.Find("OvrAvatar/AvatarSurfaceShader");
         this.mesh = CreateSkinnedMesh(skinnedMeshRender.meshAssetID, skinnedMeshRender.visibilityMask, thirdPersonLayer, firstPersonLayer);
         bones = mesh.bones;
         UpdateMeshMaterial(skinnedMeshRender.visibilityMask, mesh);
@@ -41,7 +41,7 @@ public class OvrAvatarSkinnedMeshRenderComponent : OvrAvatarRenderComponent
 
     private void UpdateMeshMaterial(ovrAvatarVisibilityFlags visibilityMask, SkinnedMeshRenderer rootMesh)
     {
-        ShaderUpdater shader = (visibilityMask & ovrAvatarVisibilityFlags.SelfOccluding) != 0 ? surfaceSelfOccluding : surface;
+        Shader shader = (visibilityMask & ovrAvatarVisibilityFlags.SelfOccluding) != 0 ? surfaceSelfOccluding : surface;
         if (rootMesh.sharedMaterial == null || rootMesh.sharedMaterial.shader != shader)
         {
             rootMesh.sharedMaterial = CreateAvatarMaterial(gameObject.name + "_material", shader);

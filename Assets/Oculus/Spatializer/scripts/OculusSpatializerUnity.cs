@@ -175,7 +175,7 @@ public class OculusSpatializerUnity : MonoBehaviour
             shape.enabled = false;
             var renderer = sys.GetComponent<ParticleSystemRenderer>();
             renderer.renderMode = ParticleSystemRenderMode.Mesh;
-            renderer.material.shader = ShaderUpdater.Find("Particles/Additive");
+            renderer.material.shader = Shader.Find("Particles/Additive");
 
             Texture2D decalTex;
             {
@@ -307,7 +307,7 @@ public class OculusSpatializerUnity : MonoBehaviour
             go.AddComponent<MeshFilter>().mesh = m;
             var renderer = go.AddComponent<MeshRenderer>();
             wallRenderer[wall] = renderer;
-            renderer.material.shader = ShaderUpdater.Find("Particles/Additive");
+            renderer.material.shader = Shader.Find("Particles/Additive");
             renderer.material.mainTexture = wallTex;
             renderer.material.mainTextureScale = new Vector2(8, 8);
             go.transform.parent = room.transform;
